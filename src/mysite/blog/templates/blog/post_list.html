@@ -4,12 +4,17 @@
         <title>Vova's blog</title>
     </head>
     <body>
-        <p>Hi there!</p>
-        <p>It works!</p>
-        <h1>Hi, Nadiyshka<3</h1>
-        <div title="hello">
-            this text is in tag div
-        </div>
-        <time></time>
+    <div>
+        <a href="https://volodymyrsblog.pythonanywhere.com/home/"><3</a>
+    </div>
+    <div>
+        {% for post in posts %}
+        <article>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+            <time>published: {{ post.published_date }}</time>
+        </article>
+        {% endfor %}
+    </div>
     </body>
 </html>
