@@ -4,5 +4,5 @@ from .models import Post
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
-    path('home/', views.get_menu, name='menu'),
+    path('menu/', views.get_menu, name='menu'),
 ]
