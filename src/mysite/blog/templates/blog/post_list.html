@@ -1,20 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Vova's blog</title>
-    </head>
-    <body>
+{% extends 'blog/base.html' %}
+
+{% block content %}
     <div>
         <a href="menu"><3</a>
     </div>
-    <div>
-        {% for post in posts %}
-        <article>
-            <h2><a href="">{{ post.title }}</a></h2>
+
+    {% for post in posts %}
+        <article class="post">
+            <time class="date">
+                {{ post.published_date }}
+            </time>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
             <p>{{ post.text|linebreaksbr }}</p>
-            <time>published: {{ post.published_date }}</time>
         </article>
-        {% endfor %}
-    </div>
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}
